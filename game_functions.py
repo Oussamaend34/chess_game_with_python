@@ -6,6 +6,9 @@ def check_events(settings, black_pieces,white_pieces, green_circle, red_circle):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
+        if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    sys.exit()
         if event.type == pygame.MOUSEBUTTONDOWN and settings.clicked == False and settings.game_stats == False:
             x_pos, y_pos = pygame.mouse.get_pos()
             if settings.promoting == True:
